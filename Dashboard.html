@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - zGames</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Dashboard</div>
+        <nav>
+            <button onclick="logout()" class="logout-btn">Logout</button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome, <span id="user-name"></span>!</h1>
+        <p>Dashboard.</p>
+    </section>
+
+    <script>
+        document.getElementById("user-name").innerText = sessionStorage.getItem("username") || "User";
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
