@@ -32,18 +32,21 @@ function setupMenuToggle() {
     const menuButton = document.querySelector(".hamburger-menu");
     const navMenu = document.getElementById("nav-menu");
 
-    if (menuButton && navMenu) {
-        menuButton.addEventListener("click", function () {
-            navMenu.style.display = navMenu.style.display === "block" ? "none" : "block";
-        });
+    if (!menuButton || !navMenu) {
+        console.error("Menu elements not found!");
+        return;
     }
+
+    menuButton.addEventListener("click", function () {
+        navMenu.classList.toggle("open"); // Add/remove 'open' class to show/hide nav
+    });
 }
 
-/* ⌨️ Typing Effect Function */
+/* ⌨️ Typing Effect */
 function typeMessage() {
     const message = "Express yourself in endless ways...";
     const typingElement = document.getElementById("typing-text");
-    
+
     if (!typingElement) return; // Exit if element not found
 
     let charIndex = 0;
@@ -58,14 +61,14 @@ function typeMessage() {
 
         if (charIndex > message.length) {
             isDeleting = true;
-            setTimeout(type, 1000); // Pause before backspacing
+            setTimeout(type, 1000);
         } else if (charIndex < 0) {
             isDeleting = false;
-            setTimeout(type, 500); // Pause before retyping
+            setTimeout(type, 500);
         } else {
-            setTimeout(type, isDeleting ? 50 : 100); // Adjust typing speed
+            setTimeout(type, isDeleting ? 50 : 100);
         }
     }
 
-    type(); // Start Typing effect
+    type();
 }

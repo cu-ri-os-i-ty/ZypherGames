@@ -1,179 +1,46 @@
-/* 🌈 Background Animation */
-body {
-    background: linear-gradient(-45deg, #a010f3, #3b05fc, #0083b0, #00c6ff);
-    background-size: 400% 400%;
-    animation: gradientMove 10s ease infinite;
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    font-family: Arial, sans-serif;
-}
-
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* 🚀 Header & Navigation */
-header {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.logo {
-    font-size: 2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-shadow: 0 0 10px #fff, 0 0 20px #ff0000, 0 0 30px #0385ff, 0 0 40px #0083b0;
-    color: white;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-shadow: 0 0 8px #fff, 0 0 16px #ff0000, 0 0 24px #0385ff, 0 0 32px #0083b0;
-    color: white;
-    text-decoration: none;
-}
-
-/* 🍔 Hamburger Menu */
+/* 🍔 Navbar Styles */
 .hamburger-menu {
     font-size: 2rem;
     cursor: pointer;
     color: white;
-    display: none;
+    display: none; /* Hidden on desktop */
 }
 
-/* 📜 Styling for Mobile Navigation */
+/* 📜 Mobile Navigation */
 @media (max-width: 768px) {
     .hamburger-menu {
-        display: block;
+        display: block; /* Show hamburger on mobile */
     }
 
     nav {
-        display: none;
+        display: none; /* Hide nav by default */
         position: absolute;
         top: 50px;
         right: 10px;
         background: rgba(0, 0, 0, 0.8);
         width: 200px;
         border-radius: 5px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    /* ✅ Visible Menu When Open */
+    nav.open {
+        display: block;
+        animation: fadeIn 0.3s ease-in-out;
     }
 
     nav ul {
         flex-direction: column;
-        padding: 10px;
     }
 
     nav ul li {
         padding: 10px;
-        text-align: center;
     }
 }
 
-/* ✨ Main Section Title */
-h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-shadow: 0 0 10px #fff, 0 0 20px #ff0000, 0 0 30px #0385ff, 0 0 40px #0083b0;
-    color: white;
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* 📝 Subtitle / Paragraph */
-p {
-    font-size: 18px;
-    margin-top: 20px;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
-}
-
-/* ✨ Glowing Button */
-button {
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 12px 24px;
-    color: white;
-    background: linear-gradient(to right, #ff416c, #ff4b2b);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 0 10px #ff416c, 0 0 20px #ff4b2b;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Hover Effect */
-button:hover {
-    transform: scale(1.1);
-    background: linear-gradient(to right, #ff4b2b, #ff416c);
-    box-shadow: 0 0 15px #ff4b2b, 0 0 25px #ff416c, 0 0 35px #ff4b2b;
-}
-
-/* 🌠 Floating Stars Background */
-.stars-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: -1;
-}
-
-/* Individual Floating Stars */
-.star {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 0 10px white;
-    animation: floatStars 5s infinite linear;
-}
-
-@keyframes floatStars {
-    0% {
-        transform: translateY(0px);
-        opacity: 0.8;
-    }
-    100% {
-        transform: translateY(-100vh);
-        opacity: 0;
-    }
-}
-
-/* ✨ Typing Effect Styling */
-#typing-text {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-    text-shadow: 0 0 8px #fff, 0 0 16px #ff0000, 0 0 24px #0385ff;
-    margin-top: 10px;
-    min-height: 30px; /* Prevents layout shift */
+/* 🎬 Smooth Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
