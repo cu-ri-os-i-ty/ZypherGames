@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("FreeStyle page loaded!");
     
     createStars();    // Generate floating stars
-    setupMenuToggle(); // Setup hamburger menu toggle
     typeMessage();    // Start typing effect
 });
 
@@ -16,30 +15,25 @@ function createStars() {
         let star = document.createElement("div");
         star.classList.add("star");
 
-        // Random Position
         star.style.left = Math.random() * 100 + "vw";
         star.style.top = Math.random() * 100 + "vh";
 
-        // Random speed of floating animation
         star.style.animationDuration = (Math.random() * 5 + 3) + "s";
 
         starsContainer.appendChild(star);
     }
 }
 
-/* 🍔 Smooth Hamburger Menu Toggle */
-function setupMenuToggle() {
-    const menuButton = document.querySelector(".hamburger-menu");
-    const navMenu = document.getElementById("nav-menu");
+/* 🟢 Open Fullscreen Menu */
+function openMenu() {
+    const fullscreenMenu = document.getElementById("fullscreen-menu");
+    fullscreenMenu.classList.add("show");
+}
 
-    if (!menuButton || !navMenu) {
-        console.error("Menu elements not found!");
-        return;
-    }
-
-    menuButton.addEventListener("click", function () {
-        navMenu.classList.toggle("open"); // Toggle slide-in animation
-    });
+/* 🟢 Close Fullscreen Menu */
+function closeMenu() {
+    const fullscreenMenu = document.getElementById("fullscreen-menu");
+    fullscreenMenu.classList.remove("show");
 }
 
 /* ⌨️ Typing Effect */
