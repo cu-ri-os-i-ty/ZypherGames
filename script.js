@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("ZypherGames! Stars are loading...");
-    createStars(); // Generate floating stars when the page loads
+    createStars(); // Generate floating stars
 });
 
-// Function to create floating stars
+/* 🌟 Function to Create Floating Stars */
 function createStars() {
     const starsContainer = document.querySelector(".stars-container");
 

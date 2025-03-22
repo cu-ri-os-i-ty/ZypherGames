@@ -1,6 +1,6 @@
-/* 🌌 Background Gradient with Animation */
+/* 🌌 Background Gradient & Animation */
 body {
-    background: linear-gradient(-45deg, #a010f3, #3b05fc, #0083b0, #00c6ff);
+    background: linear-gradient(-45deg, #1000f3, #3b05fc, #0083b0, #00c6ff);
     background-size: 400% 400%;
     animation: gradientMove 10s ease infinite;
     height: 100vh;
@@ -21,7 +21,55 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* ✨ Floating Stars (Restored) */
+/* Header Bar (Top-Left) */
+header {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Header Text - ZypherGames */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 5px white;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+/* ✨ Centered Glow Effect */
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff0000, 0 0 30px #0385ff, 0 0 40px #0083b0;
+    color: white;
+}
+
+/* 🌠 Floating Stars */
 .stars-container {
     position: fixed;
     top: 0;
@@ -33,7 +81,7 @@ body {
     z-index: -1;
 }
 
-/* Individual Floating Stars */
+/* Individual Stars */
 .star {
     position: absolute;
     width: 5px;
