@@ -1,0 +1,7 @@
+body {
+    background: url("../assets/images/MinecraftBackground.png") center/cover no-repeat fixed;
+    background-size: cover; /* Ensures the image covers the whole page */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repetition */
+    background-attachment: fixed; /* Keeps the background fixed when scrolling */
+}
