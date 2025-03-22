@@ -14,15 +14,19 @@
     <!-- Header with Navigation -->
     <header>
         <div class="logo">FreeStyle</div>
-        <div class="hamburger-menu">☰</div>  <!-- Clickable button -->
-        <nav id="nav-menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="games.html">Games</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
+        <div class="hamburger-menu" onclick="openMenu()">☰</div>
     </header>
+    <div id="fullscreen-menu" class="hidden">
+        <div class="menu-content">
+            <span class="close-btn" onclick="closeMenu()">❌</span>
+            <div class="menu-grid">
+                <div class="menu-top-left">Title</div>
+                <div class="menu-middle">Middle Content</div>
+                <div class="menu-bottom-left">Bottom Left</div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Main Content with Typing Effect -->
     <main>

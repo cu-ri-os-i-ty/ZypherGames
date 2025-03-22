@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("FreeStyle page loaded!");
     
     createStars();    // Generate floating stars
-    setupMenuToggle(); // Setup hamburger menu toggle
     typeMessage();    // Start typing effect
+    setupMenu();      // Ensure menu remains hidden on load
 });
 
 /* 🌠 Create Floating Stars */
@@ -16,31 +16,48 @@ function createStars() {
         let star = document.createElement("div");
         star.classList.add("star");
 
-        // Random Position
         star.style.left = Math.random() * 100 + "vw";
         star.style.top = Math.random() * 100 + "vh";
 
-        // Random speed of floating animation
         star.style.animationDuration = (Math.random() * 5 + 3) + "s";
 
         starsContainer.appendChild(star);
     }
 }
 
-/* 🍔 Smooth Hamburger Menu Toggle */
-function setupMenuToggle() {
-    const menuButton = document.querySelector(".hamburger-menu");
-    const navMenu = document.getElementById("nav-menu");
-
-    if (!menuButton || !navMenu) {
-        console.error("Menu elements not found!");
-        return;
+/* 🟢 Make sure the menu is hidden on page load */
+function setupMenu() {
+    const fullscreenMenu = document.getElementById("fullscreen-menu");
+    if (fullscreenMenu) {
+        fullscreenMenu.classList.remove("show"); // Ensures menu stays hidden at first
     }
-
-    menuButton.addEventListener("click", function () {
-        navMenu.classList.toggle("open"); // Toggle slide-in animation
-    });
 }
+
+/* 🟢 Open Fullscreen Menu */
+function openMenu() {
+    const fullscreenMenu = document.getElementById("fullscreen-menu");
+    fullscreenMenu.classList.add("show");
+}
+
+/* 🟢 Close Fullscreen Menu */
+function closeMenu() {
+    const fullscreenMenu = document.getElementById("fullscreen-menu");
+    fullscreenMenu.classList.remove("show");
+}
+
+/* 🟢 Close Menu When Clicking Outside */
+document.addEventListener("click", function (event) {
+    const fullscreenMenu = document.getElementById("fullscreen-menu");
+    const menuContent = document.querySelector(".menu-content");
+    const hamburgerBtn = document.querySelector(".hamburger-menu");
+
+    // Check if clicked outside of menu content and not the hamburger button
+    if (fullscreenMenu.classList.contains("show") && 
+        !menuContent.contains(event.target) && 
+        !hamburgerBtn.contains(event.target)) {
+        closeMenu();
+    }
+});
 
 /* ⌨️ Typing Effect */
 function typeMessage() {
