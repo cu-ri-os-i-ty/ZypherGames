@@ -1,9 +1,22 @@
 body {
-    font-family: Arial, sans-serif;
+    background: linear-gradient(-45deg, #ff416c, #ff4b2b, #0083b0, #00c6ff);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    height: 100vh;
     margin: 0;
-    padding: 0;
-    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Gradient Animation */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* Header */
@@ -43,9 +56,15 @@ nav ul li a {
     background-size: cover;
 }
 
-.hero h1 {
-    font-size: 36px;
+/* Glowing Header Text */
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff0000, 0 0 30px #0385ff, 0 0 40px #0083b0;
+    color: white;
 }
+
 
 .hero p {
     font-size: 18px;
@@ -91,4 +110,71 @@ footer {
     text-align: center;
     padding: 20px;
     background: #333;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+
+/* Glowing Button */
+button {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 12px 24px;
+    color: white;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ff416c, 0 0 20px #ff4b2b;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(to right, #ff4b2b, #ff416c);
+    box-shadow: 0 0 15px #ff4b2b, 0 0 25px #ff416c, 0 0 35px #ff4b2b;
+}
+/* Floating Stars Container */
+.stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1; /* Keeps stars in the background */
+}
+
+/* Individual floating stars */
+.star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+    animation: floatStars 5s infinite linear;
+}
+
+/* Floating animation */
+@keyframes floatStars {
+    0% {
+        transform: translateY(0px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
 }
