@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
     typeMessage();    // Start typing effect
 });
 
-/* 🌠 Function to Create Floating Stars */
+/* 🌠 Create Floating Stars */
 function createStars() {
     const starsContainer = document.querySelector(".stars-container");
 
-    if (!starsContainer) return; // Exit if stars container is missing
+    if (!starsContainer) return;
 
     for (let i = 0; i < 50; i++) {
         let star = document.createElement("div");
@@ -27,7 +27,7 @@ function createStars() {
     }
 }
 
-/* 🍔 Function to Setup Hamburger Menu Toggle */
+/* 🍔 Smooth Hamburger Menu Toggle */
 function setupMenuToggle() {
     const menuButton = document.querySelector(".hamburger-menu");
     const navMenu = document.getElementById("nav-menu");
@@ -38,7 +38,7 @@ function setupMenuToggle() {
     }
 
     menuButton.addEventListener("click", function () {
-        navMenu.classList.toggle("open"); // Add/remove 'open' class to show/hide nav
+        navMenu.classList.toggle("open"); // Toggle slide-in animation
     });
 }
 
@@ -47,7 +47,7 @@ function typeMessage() {
     const message = "Express yourself in endless ways...";
     const typingElement = document.getElementById("typing-text");
 
-    if (!typingElement) return; // Exit if element not found
+    if (!typingElement) return;
 
     let charIndex = 0;
     let isDeleting = false;

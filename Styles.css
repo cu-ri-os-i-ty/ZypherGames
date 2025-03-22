@@ -1,33 +1,33 @@
-/* 🍔 Navbar Styles */
+/* 🍔 Hamburger Menu */
 .hamburger-menu {
     font-size: 2rem;
     cursor: pointer;
     color: white;
-    display: none; /* Hidden on desktop */
+    display: none;
 }
 
-/* 📜 Mobile Navigation */
+/* 📜 Smooth Navigation (Hidden by Default) */
 @media (max-width: 768px) {
     .hamburger-menu {
-        display: block; /* Show hamburger on mobile */
+        display: block;
     }
 
     nav {
-        display: none; /* Hide nav by default */
         position: absolute;
-        top: 50px;
-        right: 10px;
-        background: rgba(0, 0, 0, 0.8);
-        width: 200px;
+        top: 60px;
+        right: -100%;  /* Menu starts off-screen */
+        background: rgba(0, 0, 0, 0.9);
+        width: 250px;
+        height: 100vh;
         border-radius: 5px;
         text-align: center;
-        padding: 10px;
+        padding: 20px;
+        transition: right 0.4s ease-in-out; /* Smooth slide animation */
     }
 
-    /* ✅ Visible Menu When Open */
+    /* ✅ Slide-in when menu is open */
     nav.open {
-        display: block;
-        animation: fadeIn 0.3s ease-in-out;
+        right: 0; /* Slide navigation into view */
     }
 
     nav ul {
@@ -35,12 +35,28 @@
     }
 
     nav ul li {
-        padding: 10px;
+        padding: 15px 0;
+    }
+
+    /* Smooth fade-in effect */
+    nav ul li a {
+        font-size: 1.4rem;
+        font-weight: bold;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    nav.open ul li a {
+        opacity: 1;
     }
 }
 
-/* 🎬 Smooth Animation */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+/* 🎬 Smooth Typing Effect */
+#typing-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 8px #fff, 0 0 16px #ff0000, 0 0 24px #0385ff;
+    margin-top: 20px;
+    min-height: 30px;
 }
