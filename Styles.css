@@ -1,80 +1,180 @@
-/* 🍔 Hamburger Menu Button */
-.hamburger-menu {
-    font-size: 2rem;
-    cursor: pointer;
+body {
+    background: linear-gradient(-45deg, #a010f3, #3b05fc, #0083b0, #00c6ff);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
-    display: block;
-    transition: 0.3s;
-    z-index: 200;
+    text-align: center;
+    font-family: Arial, sans-serif;
 }
 
-/* 📜 Fullscreen Overlay Menu */
-#fullscreen-menu {
+/* Gradient Animation */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #333;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px;
+    background: url('https://via.placeholder.com/1200x500') no-repeat center center;
+    background-size: cover;
+}
+
+/* Glowing Header Text */
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff0000, 0 0 30px #0385ff, 0 0 40px #0083b0;
+    color: white;
+}
+
+
+.hero p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #ff6600;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Games Section */
+.games-section {
+    text-align: center;
+    padding: 50px;
+}
+
+.games-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.game-card {
+    background: #444;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 250px;
+}
+
+.game-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+
+/* Glowing Button */
+button {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 12px 24px;
+    color: white;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ff416c, 0 0 20px #ff4b2b;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(to right, #ff4b2b, #ff416c);
+    box-shadow: 0 0 15px #ff4b2b, 0 0 25px #ff416c, 0 0 35px #ff4b2b;
+}
+/* Floating Stars Container */
+.stars-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.95);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease-in-out, visibility 0.4s;
-    z-index: 100;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1; /* Keeps stars in the background */
 }
 
-/* ✅ Menu Opens Properly When "show" Class is Added */
-#fullscreen-menu.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* ❌ Close Button */
-.close-btn {
+/* Individual floating stars */
+.star {
     position: absolute;
-    top: 20px;
-    right: 25px;
-    font-size: 2rem;
-    cursor: pointer;
-    color: white;
-    transition: 0.3s;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+    animation: floatStars 5s infinite linear;
 }
 
-.close-btn:hover {
-    opacity: 0.7;
-}
-
-/* 🕹 X-Shaped Menu Layout */
-.menu-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 90%;
-    max-width: 600px;
-    color: white;
-}
-
-/* Flexbox Grid for X-layout */
-.menu-grid {
-    display: grid;
-    grid-template-areas: 
-        "top-left   middle"
-        "bottom-left middle";
-    gap: 30px;
-}
-
-/* 🔳 Areas in the X Grid */
-.menu-top-left { grid-area: top-left; font-size: 2rem; }
-.menu-middle { grid-area: middle; font-size: 1.8rem; font-weight: bold; }
-.menu-bottom-left { grid-area: bottom-left; font-size: 1.5rem; }
-
-.menu-top-left, 
-.menu-middle, 
-.menu-bottom-left {
-    padding: 10px 20px;
-    border-radius: 10px;
-    text-shadow: 0 0 10px #fff, 0 0 20px #ff0000, 0 0 30px #0385ff;
+/* Floating animation */
+@keyframes floatStars {
+    0% {
+        transform: translateY(0px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
 }
