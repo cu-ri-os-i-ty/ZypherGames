@@ -1,3 +1,4 @@
+/* 🌈 Background Animation */
 body {
     background: linear-gradient(-45deg, #a010f3, #3b05fc, #0083b0, #00c6ff);
     background-size: 400% 400%;
@@ -5,6 +6,7 @@ body {
     height: 100vh;
     margin: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
@@ -12,24 +14,24 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Gradient Animation */
 @keyframes gradientMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Header */
+/* 🚀 Header & Navigation */
 header {
     position: absolute;
     top: 10px;
     right: 20px;
-    background: none; /* Removes black/gray background */
-    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .logo {
-    font-size: 3rem; /* Matches ZGAMES size */
+    font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
     text-shadow: 0 0 10px #fff, 0 0 20px #ff0000, 0 0 30px #0385ff, 0 0 40px #0083b0;
@@ -40,6 +42,8 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 15px;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
@@ -54,89 +58,62 @@ nav ul li a {
     text-decoration: none;
 }
 
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding: 50px;
-    background: url('https://via.placeholder.com/1200x500') no-repeat center center;
-    background-size: cover;
+/* 🍔 Hamburger Menu */
+.hamburger-menu {
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+    display: none;
 }
 
-/* Glowing Header Text */
+/* 📜 Styling for Mobile Navigation */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        background: rgba(0, 0, 0, 0.8);
+        width: 200px;
+        border-radius: 5px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    nav ul li {
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+/* ✨ Main Section Title */
 h1 {
     font-size: 3rem;
     font-weight: bold;
     text-transform: uppercase;
     text-shadow: 0 0 10px #fff, 0 0 20px #ff0000, 0 0 30px #0385ff, 0 0 40px #0083b0;
     color: white;
-
     position: absolute;
-    top: 30%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
-
 }
 
-
-.hero p {
+/* 📝 Subtitle / Paragraph */
+p {
     font-size: 18px;
-    margin-top: 10px;
+    margin-top: 20px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
 }
 
-.btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: #ff6600;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-/* Games Section */
-.games-section {
-    text-align: center;
-    padding: 50px;
-}
-
-.games-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.game-card {
-    background: #444;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 250px;
-}
-
-.game-card img {
-    width: 100%;
-    border-radius: 5px;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #333;
-}
-
-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
-
-/* Glowing Button */
+/* ✨ Glowing Button */
 button {
     font-size: 1.2rem;
     font-weight: bold;
@@ -156,7 +133,8 @@ button:hover {
     background: linear-gradient(to right, #ff4b2b, #ff416c);
     box-shadow: 0 0 15px #ff4b2b, 0 0 25px #ff416c, 0 0 35px #ff4b2b;
 }
-/* Floating Stars Container */
+
+/* 🌠 Floating Stars Background */
 .stars-container {
     position: fixed;
     top: 0;
@@ -165,10 +143,10 @@ button:hover {
     height: 100vh;
     overflow: hidden;
     pointer-events: none;
-    z-index: -1; /* Keeps stars in the background */
+    z-index: -1;
 }
 
-/* Individual floating stars */
+/* Individual Floating Stars */
 .star {
     position: absolute;
     width: 5px;
@@ -179,7 +157,6 @@ button:hover {
     animation: floatStars 5s infinite linear;
 }
 
-/* Floating animation */
 @keyframes floatStars {
     0% {
         transform: translateY(0px);
@@ -189,4 +166,14 @@ button:hover {
         transform: translateY(-100vh);
         opacity: 0;
     }
+}
+
+/* ✨ Typing Effect Styling */
+#typing-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 8px #fff, 0 0 16px #ff0000, 0 0 24px #0385ff;
+    margin-top: 10px;
+    min-height: 30px; /* Prevents layout shift */
 }

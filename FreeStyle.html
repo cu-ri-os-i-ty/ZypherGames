@@ -5,16 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FreeStyle</title>
     <link rel="stylesheet" href="Styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-    
+    <!-- Background Stars Effect -->
+    <div class="stars-container"></div>
+
+    <!-- Header with Navigation -->
     <header>
-        <h1>Being Creative, is Imaginative</h1>
+        <div class="logo">FreeStyle</div>
+        <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <footer>
-        © 2025 ZypherGames. All rights reserved. | <a href="index.html">Back to Home</a>
-    </footer>
+    <!-- Main Content with Typing Effect -->
+    <main>
+        <h1>Being Creative is Imaginative</h1>
+        <p id="typing-text"></p>  <!-- Typing effect will apply here -->
+    </main>
 
+    <!-- Footer -->
+    <footer>
+        <a href="index.html">← Back to Home</a>
+    </footer>
 </body>
 </html>

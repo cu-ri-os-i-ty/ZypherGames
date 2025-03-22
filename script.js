@@ -1,28 +1,71 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("ZypherGames! Stars are loading...");
-    createStars(); // Generate floating stars when the page loads
+    console.log("FreeStyle page loaded!");
+    
+    createStars();    // Generate floating stars
+    setupMenuToggle(); // Setup hamburger menu toggle
+    typeMessage();    // Start typing effect
 });
 
-// Function to create floating stars
+/* 🌠 Function to Create Floating Stars */
 function createStars() {
     const starsContainer = document.querySelector(".stars-container");
 
-    if (!starsContainer) {
-        console.error("Error: .stars-container not found in the HTML.");
-        return;
-    }
+    if (!starsContainer) return; // Exit if stars container is missing
 
-    for (let i = 0; i < 50; i++) { // Number of stars
+    for (let i = 0; i < 50; i++) {
         let star = document.createElement("div");
         star.classList.add("star");
 
-        // Randomize position
-        star.style.left = Math.random() * 100 + "vw";  // Random X position
-        star.style.top = Math.random() * 100 + "vh";   // Random Y position
+        // Random Position
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.top = Math.random() * 100 + "vh";
 
-        // Random speed
+        // Random speed of floating animation
         star.style.animationDuration = (Math.random() * 5 + 3) + "s";
 
         starsContainer.appendChild(star);
     }
+}
+
+/* 🍔 Function to Setup Hamburger Menu Toggle */
+function setupMenuToggle() {
+    const menuButton = document.querySelector(".hamburger-menu");
+    const navMenu = document.getElementById("nav-menu");
+
+    if (menuButton && navMenu) {
+        menuButton.addEventListener("click", function () {
+            navMenu.style.display = navMenu.style.display === "block" ? "none" : "block";
+        });
+    }
+}
+
+/* ⌨️ Typing Effect Function */
+function typeMessage() {
+    const message = "Express yourself in endless ways...";
+    const typingElement = document.getElementById("typing-text");
+    
+    if (!typingElement) return; // Exit if element not found
+
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+        if (!isDeleting) {
+            typingElement.innerHTML = message.substring(0, charIndex++) + "|";
+        } else {
+            typingElement.innerHTML = message.substring(0, charIndex--) + "|";
+        }
+
+        if (charIndex > message.length) {
+            isDeleting = true;
+            setTimeout(type, 1000); // Pause before backspacing
+        } else if (charIndex < 0) {
+            isDeleting = false;
+            setTimeout(type, 500); // Pause before retyping
+        } else {
+            setTimeout(type, isDeleting ? 50 : 100); // Adjust typing speed
+        }
+    }
+
+    type(); // Start Typing effect
 }
