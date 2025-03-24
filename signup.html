@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <div class="form-container">
+        <h2>Create Your <span style="color: #f12d78;">ZGames</span> Account</h2>
+        <form action="" method="POST" novalidate>
+            {{ form.hidden_tag() }}
+
+            <div class="input-group">
+                <label for="id">{{ form.id.label }}</label>
+                {{ form.id(size=20, placeholder="Choose a unique username") }}
+            </div>
+
+            <div class="input-group">
+                <label for="name">{{ form.name.label }}</label>
+                {{ form.name(size=30, placeholder="Enter your full name") }}
+            </div>
+
+            <div class="input-group">
+                <label for="email">{{ form.email.label }}</label>
+                {{ form.email(size=30, placeholder="Enter your email") }}
+            </div>
+
+            <div class="input-group">
+                <label for="password">{{ form.password.label }}</label>
+                {{ form.password(size=30, placeholder="Create a strong password") }}
+            </div>
+
+            <div class="input-group">
+                <label for="password_confirm">{{ form.password_confirm.label }}</label>
+                {{ form.password_confirm(size=30, placeholder="Confirm your password") }}
+            </div>
+            <div class="g-recaptcha" data-sitekey="{{site_key}}"></div>
+            <button id='submit' type="submit" class="submit-button">Sign Up</button>
+        </form>
+    </div>      
+{% endblock %}
