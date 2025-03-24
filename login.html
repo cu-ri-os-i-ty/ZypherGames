@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <div class="form-container">
+        <h2>Login to <span style="color: #f12d78;">ZGames</span></h2>
+        <form action="" method="POST" novalidate>
+            {{ form.hidden_tag() }}
+
+            <div class="input-group">
+                <label for="id">{{ form.id.label }}</label>
+                {{ form.id(size=30, placeholder="Enter your ZGames ID") }}
+            </div>
+
+            <div class="input-group">
+                <label for="password">{{ form.password.label }}</label>
+                {{ form.password(size=30, placeholder="Enter your password") }}
+            </div>
+            <button id='submit' type="submit" class="submit-button">Log In</button>
+        </form>
+    </div>
+{% endblock %}
