@@ -1,0 +1,6 @@
+body {
+    background: url("../../Images/MinecraftBackground.png") no-repeat center center fixed;
+    background-size: cover;   /* Ensures image fully covers the screen */
+    background-position: center; /* Keep the image centered */
+    background-repeat: no-repeat; /* Prevent tiling */
+}
