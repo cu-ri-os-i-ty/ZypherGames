@@ -3,11 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
     createStars(); // Generate floating stars
 
     const hamburger = document.getElementById('hamburger');
-    const navMenu = document.querySelector('nav ul');
+    const navMenu = document.getElementById('nav-menu');
 
     hamburger.addEventListener('click', () => {
         navMenu.classList.toggle('active');
     });
+
 });
 
 /* 🌟 Function to Create Floating Stars */
