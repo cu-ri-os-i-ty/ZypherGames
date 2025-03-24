@@ -1,46 +1,50 @@
-<!-- <body> TODO: Remove this
-     Background Stars Effect 
-    <div class="stars-container"></div>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet"  type="text/css" href="static/style.css">
+        <title>Zypher Games</title>
+    </head>
+    <body>  
+        <header> 
+            <a href="index.html" class="logo">ZypherGames</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <ul>
+                    <button class="dark-mode-toggle">Dark Mode</button>
+                    <li><a href="Games.html">Games</a></li>
+                    <li><a href="FreeStyle.html">FreeStyle</a></li>
+                    <li><a href="Minecraft-Home.html">Minecraft</a></li>
+                    <li><a href="login.html"></a></li>
+                    <li><a href="signup.html"></a></li>
+                </ul>
+            </nav>
+        </header>
 
-     Header with Navigation 
-    <header>
-        <div class="logo">ZypherGames</div>
-        <nav>
-            <ul>
-                <li><a href="Games.html">Games</a></li>
-                <li><a href="FreeStyle.html">FreeStyle</a></li>
-                <li><a href="Minecraft-Home.html">MineCraft</a></li>
-            </ul>
-        </nav>
-    </header>
+        <div class="stars-container">
+            <div class="content">
+                <h1 id="welcome-message">Welcome to <span style="color: #f12d78;">ZGames</span></h1>
+                <h1>You Be You!</h1>
+                <h2>Login or Sign Up today</h2>
+        
+                <h1 /> 
+                <button type="button" class="button" onclick=simple_action("{{ url_for('login') }}")>Login</button>
+                <button type="button" class="button" onclick=simple_action("{{ url_for('signup') }}")>Sign Up</button>
+                <script type="text/javascript">
+                    function simple_action(target) {
+                        window.location = target
+                    }
+                </script>
+            </div>
+        </div>
 
-     Main Centered Content 
-    <main>
-        <h1>zGames</h1>
-        <p>You be you!</p>
-    </main>
-</body>
-</html> -->
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
 
-{% extends 'base.html' %}
-<head>
-    <title>Zypher Games</title>
-</head>
-{% block main %}
-<div class="stars-container">
-    <div class="content">
-        <h1 id="welcome-message">Welcome to <span style="color: #f12d78;">ZGames</span></h1>
-        <h1>You Be You!</h1>
-        <h2>Login or Sign Up today</h2>
-
-        <h1 /> 
-        <button type="button" class="button" onclick=simple_action("{{ url_for('login') }}")>Login</button>
-        <button type="button" class="button" onclick=simple_action("{{ url_for('signup') }}")>Sign Up</button>
-        <script type="text/javascript">
-            function simple_action(target) {
-                window.location = target
-            }
-        </script>
-    </div>
-</div>
-{% endblock %}
+    </body>
+</html>
