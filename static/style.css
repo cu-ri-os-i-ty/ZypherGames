@@ -72,6 +72,7 @@ h1 {
 /* 🌠 Floating Stars */
 .stars-container {
     position: fixed;
+    margin-top: 80px;
     top: 0;
     left: 0;
     width: 100%;
@@ -127,18 +128,18 @@ h1 {
     cursor: pointer;
     padding: 10px;
     z-index: 999; /* make sure it's clickable */
-  }
+}
   
-  .hamburger span {
+.hamburger span {
     height: 3px;
     width: 25px;
     background: #333;
     margin: 4px 0;
     transition: 0.3s ease;
-  }
+}
   
-  /* Nav menu hidden by default */
-  nav ul {
+/* Nav menu hidden by default */
+nav ul {
     display: none;
     flex-direction: column;
     background: #fff;
@@ -148,25 +149,25 @@ h1 {
     width: 100%;
     padding: 1rem;
     list-style: none;
-  }
+}
   
-  /* Show menu when active */
-  nav ul.active {
+/* Show menu when active */
+nav ul.active {
     display: flex;
-  }
+}
   
-  /* Optional: make it pretty on bigger screens */
-  @media (min-width: 769px) {
-    nav ul {
-      position: static;
-      width: auto;
-      flex-direction: row;
-      gap: 1rem;
-      background: transparent;
-      padding: 0;
-    }
-  
-    nav ul.active {
-      display: flex;
-    }
-  }
+/* Optional: make it pretty on bigger screens */
+@media (min-width: 769px) {
+nav ul {
+    position: static;
+    width: auto;
+    flex-direction: row;
+    gap: 1rem;
+    background: transparent;
+    padding: 0;
+}
+
+nav ul.active {
+    display: flex;
+}
+}
